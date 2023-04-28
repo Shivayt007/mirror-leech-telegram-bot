@@ -98,7 +98,11 @@ class TgUploader:
                 await aiorename(self.__up_path, new_path)
                 self.__up_path = new_path
         else:
-            cap_mono = f"<code>Shiva{file_}</code>"
+                    new_path = ospath.join(
+                    dirpath, f"Shiva{file_}")
+                    await aiorename(self.__up_path, new_path)
+                    self.__up_path = new_path
+                    cap_mono = f"<code>Shiva{file_}</code>"
         if len(file_) > 60:
             if is_archive(file_):
                 name = get_base_name(file_)
